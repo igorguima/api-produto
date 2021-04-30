@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: api
 spec:
-  replicas: 5
+  replicas: 1
   selector:
     matchLabels:
       app: api
@@ -15,14 +15,37 @@ spec:
       containers:
         - name: api
           image: igorguimaa/api-bootcamp-k8s-produto:v2
+          resources:
+            requests:
+              memory: "32Mi"
+              cpu:  50
+            limits:
+              memory: "64Mi"
+              cpu:  100
+          # livenessProbe:
+          #   httpGet:
+          #     path: /health
+          #     port: 8080
+          #   initialDelaySeconds: 0
+          #   periodSeconds: 1
+          #   timeoutSeconds: 1
+          #   successThreshold: 1
+          #   failureThreshold: 1                     
+          # readinessProbe:
+          #   httpGet:
+          #     path: /read
+          #     port: 8080
+          #   initialDelaySeconds: 0
+          #   periodSeconds: 1
+          #   timeoutSeconds: 1
+          #   successThreshold: 1
+          #   failureThreshold: 1                               
           ports:
             - containerPort: 8080
           env:
             - name: MONGODB_URI
               value: mongodb://igorguima:XGmcU5bHa@mongodb-service:27017/admin
-
 ---
-
 apiVersion: v1
 kind: Service
 metadata:
