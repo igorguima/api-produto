@@ -1,11 +1,11 @@
 ---
-swagger: "3.0"
+swagger: "5.0"
 info:
   description: "API de Cadastro de Produtos - Nova Versão"
-  version: "3.0.0"
+  version: "5.0.0"
   title: "Cadastro de Produtos - Nova Versão"
   contact:
-    email: "fabricio@veronez.dev"
+    email: "igor@multiplier.com.br"
 paths:
   /read:
     get:
