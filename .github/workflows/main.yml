@@ -45,7 +45,7 @@ jobs:
         push: true
         tags: |
           igorguimaa/api-bootcamp-k8s-produto:latest
-           igorguimaa/api-bootcamp-k8s-produto:${{github.run_number}}
+          igorguimaa/api-bootcamp-k8s-produto:${{github.run_number}}
           
   CD:  
     runs-on: ubuntu-latest
@@ -70,6 +70,7 @@ jobs:
       - name: Deploy WebAPI
         uses: Azure/k8s-deploy@v1.3
         with:
+          images: igorguimaa/api-bootcamp-k8s-produto:${{github.run_number}}        
           manifests: |
             k8s/api/deployment.yaml
 
