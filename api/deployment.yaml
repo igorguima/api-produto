@@ -57,19 +57,27 @@ spec:
     - port: 80
       targetPort: 8080
       nodePort: 30000
-  type: NodePort
+  type: LoadBalancer
 
 --- 
 
-apiVersion: autoscaling/v1
-kind: HorizontalPodAutoscaler
-metadata:
-  name: api-hpa
-spec:
-  scaleTargetRef:
-    apiVersion: apps/v1
-    kind: Deployment
-    name: api 
-  minReplicas: 1
-  maxReplicas: 10
-  targetCPUUtilizationPercentage: 80
+# apiVersion: autoscaling/v1
+# kind: HorizontalPodAutoscaler
+# metadata:
+#   name: api-hpa
+# spec:
+#   scaleTargetRef:
+#     apiVersion: apps/v1
+#     kind: Deployment
+#     name: api 
+#   minReplicas: 1
+#   maxReplicas: 10
+#   targetCPUUtilizationPercentage: 80
+#   scaleDown:
+#     policies:
+#     - type: Pods
+#       value: 4
+#       periodSeconds: 60
+#     - type: Percent
+#       value: 10
+#       periodSeconds: 60
