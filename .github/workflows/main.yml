@@ -43,8 +43,9 @@ jobs:
         # Path to the Dockerfile
         file: ./src/Dockerfile
         push: true
-        tags: 
+        tags: |
           igorguimaa/api-bootcamp-k8s-produto:latest
+           igorguimaa/api-bootcamp-k8s-produto:${{github.run_number}}
           
   CD:  
     runs-on: ubuntu-latest
