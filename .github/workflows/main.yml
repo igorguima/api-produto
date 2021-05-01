@@ -45,5 +45,5 @@ jobs:
         push: true
         tags: 
           igorguimaa/api-bootcamp-k8s-produto:latest
-          igorguimaa/api-bootcamp-k8s-produto:${{github.run_number}}
+
             
