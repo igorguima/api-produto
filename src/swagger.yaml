@@ -1,9 +1,9 @@
 ---
 swagger: "2.0"
 info:
-  description: "API de Cadastro de Produtos - Nova Versão"
-  version: "5.0.0"
-  title: "Cadastro de Produtos - Nova Versão"
+  description: "API de Cadastro de Produtos - Nova Versão 7.0"
+  version: "7.0.0"
+  title: "Cadastro de Produtos - Nova Versão 7.0"
   contact:
     email: "igor@multiplier.com.br"
 paths:
